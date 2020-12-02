@@ -8,7 +8,11 @@ func _on_Exit_body_entered(body):
 		if name == "Exit_to_2":
 			Global.level = 1
 			global.score += 100
-			
+			get_tree().change_scene("res://Levels/Level2.tscn")
+#		if name == "Exit_to_3":
+#			Global.level = 2
+#			global.score += 100
+#			get_tree().change_scene("res://Levels/Level3.tscn")
 		else:
 			global.score += 200
-			get_tree().change_scene("res://Levels/Game_Over.tscn")
+			get_tree().change_scene("res://Menu/GameOver.tscn")

@@ -10,71 +10,71 @@
 [ext_resource path="res://Player/Player.gd" type="Script" id=9]
 [ext_resource path="res://Assets/characters (3).png" type="Texture" id=10]
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 448, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 480, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 512, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 544, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 10 )
-region = Rect2( 32, 32, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 128, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 160, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 192, 32, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 10 )
 region = Rect2( 224, 32, 32, 32 )
 
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 10 )
+region = Rect2( 32, 32, 32, 32 )
+
 [sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "Moving",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": false,
 "name": "Jumping",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": false,
 "name": "Falling",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -94,7 +94,7 @@ animation = "Idle"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.94821, 2.66666 )
+position = Vector2( 1.11487, 2.83332 )
 shape = SubResource( 11 )
 
 [node name="StateMachine" type="Node" parent="."]

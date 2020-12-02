@@ -1,13 +1,16 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/portalRings2 (2).png" type="Texture" id=1]
 [ext_resource path="res://Player/Player_Container.gd" type="Script" id=2]
+[ext_resource path="res://Spike.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Exit.gd" type="Script" id=4]
 [ext_resource path="res://Levels/Camera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Kenney Future.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=9]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/four-seasons-tileset.png" type="Texture" id=11]
+[ext_resource path="res://Enemy/Enemy_Ground.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Enemy/Enemy_Container.gd" type="Script" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tilesheet_complete.png 0"
@@ -220,7 +223,7 @@ animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="AtlasTexture" id=8]
@@ -253,7 +256,7 @@ animations = [ {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "default",
-"speed": 6.0
+"speed": 10.0
 } ]
 
 [sub_resource type="ConvexPolygonShape2D" id=14]
@@ -581,38 +584,36 @@ tile_data = PoolIntArray( -196609, 536870921, 0, -262144, 536870921, 0, -262143,
 [node name="Spawn" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Spawn"]
-position = Vector2( 65.6465, 271.546 )
+position = Vector2( 71, 271 )
+scale = Vector2( 1, 1.2 )
 frames = SubResource( 7 )
 frame = 1
-speed_scale = 2.0
 playing = true
 
 [node name="Exit_to_2" type="Area2D" parent="."]
-position = Vector2( -1065.86, -27.9792 )
+position = Vector2( 2607.92, 349.263 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Exit_to_2"]
-position = Vector2( 3644.24, 375.757 )
-scale = Vector2( 1.07734, 1.26517 )
+scale = Vector2( 1, 1.2 )
 frames = SubResource( 13 )
-frame = 4
-speed_scale = 2.0
+frame = 3
 playing = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Exit_to_2"]
-polygon = PoolVector2Array( 3637.09, 356.742, 3647.69, 356.742, 3653, 359.217, 3659.01, 365.227, 3661.48, 373.359, 3661.48, 395.633, 3626.83, 395.986, 3626.48, 373.712, 3628.6, 367.702, 3633.55, 359.217 )
+polygon = PoolVector2Array( -6.73975, -18.9713, 3.86694, -19.3249, 10.231, -16.1429, 15.8877, -8.36469, 16.2415, 18.859, -16.2856, 20.2732, -16.6392, -8.01111, -10.6287, -16.4964 )
 
 [node name="Player_Container" type="Node2D" parent="."]
 script = ExtResource( 2 )
 
 [node name="Player" parent="Player_Container" instance=ExtResource( 10 )]
-position = Vector2( 63.7373, 271.972 )
+position = Vector2( 69.3941, 273.74 )
 
 [node name="Backup_Camera" type="Camera2D" parent="Player_Container"]
-position = Vector2( 65.6766, 260.134 )
+position = Vector2( 70.6264, 276.398 )
 limit_left = 0
 limit_right = 3760
 limit_bottom = 600
@@ -662,9 +663,6 @@ margin_bottom = 50.0
 custom_fonts/font = SubResource( 23 )
 text = "Score:"
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Lives" type="Label" parent="CanvasLayer/HUD"]
 margin_left = 500.0
@@ -673,4 +671,41 @@ margin_bottom = 50.0
 custom_fonts/font = SubResource( 24 )
 text = "Lives:"
 valign = 1
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+script = ExtResource( 14 )
+
+[node name="Enemy_Ground" parent="Enemy_Container" instance=ExtResource( 13 )]
+position = Vector2( 1408.58, 421.788 )
+max_constraint = 1465
+min_constraint = 1365
+
+[node name="Spike_Container" type="Node2D" parent="."]
+
+[node name="Spike" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 310.774, 312.187 )
+
+[node name="Spike2" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 520.077, 264.104 )
+
+[node name="Spike3" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 1175.12, 183.494 )
+
+[node name="Spike4" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 1303.39, 328.804 )
+
+[node name="Spike5" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 1719.24, 360.271 )
+
+[node name="Spike6" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 1864.14, 376.534 )
+
+[node name="Spike7" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 2103.74, 264.811 )
+
+[node name="Spike8" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 2535.76, 360.624 )
+
+[node name="Spike9" parent="Spike_Container" instance=ExtResource( 3 )]
+position = Vector2( 2551.97, 360.978 )
 [connection signal="body_entered" from="Exit_to_2" to="Exit_to_2" method="_on_Exit_body_entered"]
