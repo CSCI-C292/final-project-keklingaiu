@@ -61,6 +61,7 @@ min_constraint = 600
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 7 )
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
