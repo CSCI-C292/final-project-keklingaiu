@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/arcade song.wav" type="AudioStream" id=1]
+
+[node name="BackgroundMusic" type="Node2D"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -15.0
+pitch_scale = 1.5
+autoplay = true

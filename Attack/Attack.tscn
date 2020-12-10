@@ -223,9 +223,11 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -1, 0 )
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 41 )
-frame = 22
+frame = 12
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3, 0 )

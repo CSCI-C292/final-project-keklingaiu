@@ -20,8 +20,8 @@ export var max_move = 150
 export var jump_speed = 75
 export var max_jump = 580
 
-export var leap_speed = 75
-export var max_leap = 575
+export var leap_speed = 60
+export var max_leap = 450
 
 var moving = false
 var is_jumping = false
@@ -40,7 +40,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("attack"):
 		var attack = Attack.instance()
 		attack.position = position
-		attack.position.x += 20 * direction
+		attack.position.x += 24 * direction
 		attack.direction = direction
 		get_node("/root/Game/Attack_Container").add_child(attack)
 	
