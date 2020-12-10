@@ -34,6 +34,8 @@ The coin sound effect came from [https://opengameart.org/content/8-bit-sound-eff
 
 The main level music came from [https://opengameart.org/content/arcade-background-music]
 
+The explosion sound came from [https://opengameart.org/content/explosion-0]
+
 The buttons are default with the engine
 
 ## Instructions
